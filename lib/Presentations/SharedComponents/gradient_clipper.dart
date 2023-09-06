@@ -2,21 +2,21 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 
-class BackgroundWave extends StatelessWidget {
+class GradientClipper extends StatelessWidget {
   final double height;
 
-  const BackgroundWave({Key? key, required this.height}) : super(key: key);
+  const GradientClipper({Key? key, required this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
-      size: Size(height, (height * 0.36511627906976746).toDouble()),
-      painter: RPSCustomPainter(),
+      size: Size(height, height),
+      painter: RPSCustomGradientPainter(),
     );
   }
 }
 
-class RPSCustomPainter extends CustomPainter {
+class RPSCustomGradientPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Path path_0 = Path();
@@ -84,7 +84,7 @@ class RPSCustomPainter extends CustomPainter {
     paint_0_fill.shader = ui.Gradient.linear(
         Offset(size.width, size.height * 0.6114650),
         Offset(size.width, size.height * -4.458605),
-        [Color(0xffDEF9F9).withOpacity(1), Color(0xffBCFFFF).withOpacity(1)],
+        [Color(0xff0F3576).withOpacity(1), Color(0xff307CB8).withOpacity(1)],
         [0, 1]);
     canvas.drawPath(path_0, paint_0_fill);
   }
