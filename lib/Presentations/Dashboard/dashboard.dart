@@ -1,9 +1,8 @@
-import 'dart:math';
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:iconly/iconly.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:phantasm/Application/Models/categories_data.dart';
 import 'package:phantasm/Infrastructure/Utils/custom_tap.dart';
@@ -31,6 +30,33 @@ class _DashboardState extends State<Dashboard> {
         backgroundColor: Colors.white,
         extendBodyBehindAppBar: true,
         extendBody: true,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Color(0xffCC2E1A),
+          child: const Icon(
+            IconlyLight.buy,
+            color: Colors.white,
+          ),
+          onPressed: () {},
+        ),
+        bottomNavigationBar: BottomAppBar(
+          shape: const CircularNotchedRectangle(),
+          color: _primaryColor,
+          height: 59.h,
+          child: Container(
+              decoration: BoxDecoration(
+                  // gradient: LinearGradient(
+                  //   begin: Alignment.topLeft,
+                  //   end: Alignment.bottomRight,
+                  //   colors: [
+                  //     const Color(0xff0A3E89),
+                  //     const Color(0xff105ac4),
+                  //     const Color(0xff1057bd),
+                  //     const Color(0xff0A3E89),
+                  //   ],
+                  // ),
+                  )),
+        ),
         body: CustomScrollView(
           physics: const BouncingScrollPhysics(),
           slivers: [
@@ -57,7 +83,9 @@ class _DashboardState extends State<Dashboard> {
                       // Build Brands
                       const BuildBrandLogos(),
                       20.verticalSpace,
-                      const BuildFeaturedProducts()
+                      // Featured Products
+                      const BuildFeaturedProducts(),
+                      50.verticalSpace,
                     ],
                   ),
                 ),
@@ -96,6 +124,14 @@ class BuildFeaturedProducts extends StatelessWidget {
         ),
         Column(
           children: [
+            Text(
+              "Featured Products",
+              style: GoogleFonts.poppins(
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w700,
+                color: const Color(0xff0A3E89),
+              ),
+            ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: GridView.builder(
@@ -315,45 +351,6 @@ class BuildBrandLogos extends StatefulWidget {
 }
 
 class _BuildBrandLogosState extends State<BuildBrandLogos> {
-  List<ScrollController> _rowControllers = [];
-
-  @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
-      _initRowControllers();
-    });
-  }
-
-  Future<void> _initRowControllers() async {
-    _rowControllers = List.generate(
-      3,
-      (index) => ScrollController(),
-    );
-
-    for (int i = 0; i < 3; i++) {
-      await _goToElement(i);
-    }
-  }
-
-  _goToElement(int rowIndex) {
-    final Random random = Random();
-    final double itemWidth = 100.h;
-    final double randomOffset =
-        random.nextDouble() * (brandData.length - 1) * itemWidth;
-
-    _rowControllers[rowIndex].animateTo(randomOffset,
-        duration: const Duration(milliseconds: 300), curve: Curves.easeOut);
-  }
-
-  @override
-  void dispose() {
-    for (var controller in _rowControllers) {
-      controller.dispose();
-    }
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -387,7 +384,6 @@ class _BuildBrandLogosState extends State<BuildBrandLogos> {
                   height: 60.h,
                   child: ListView.builder(
                     itemCount: 10,
-                    controller: _rowControllers[im],
                     shrinkWrap: true,
                     clipBehavior: Clip.none,
                     physics: const BouncingScrollPhysics(),

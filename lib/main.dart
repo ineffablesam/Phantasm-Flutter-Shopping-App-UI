@@ -17,7 +17,10 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (_, child) {
-        return const MaterialApp(
+        return MaterialApp(
+          theme: ThemeData(
+            useMaterial3: false,
+          ),
           debugShowCheckedModeBanner: false,
           title: 'Phantasm',
           home: Dashboard(),

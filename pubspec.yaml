@@ -44,6 +44,7 @@ dependencies:
   modal_bottom_sheet: ^3.0.0-pre
   carousel_slider: ^4.2.1
   smooth_page_indicator: ^1.1.0
+  iconly: ^1.0.1
 
 
 dev_dependencies:
