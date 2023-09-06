@@ -5,8 +5,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'custom_clipper.dart';
 
 class DashboardCustomAppBar extends StatelessWidget {
+  final Widget? leading;
   const DashboardCustomAppBar({
     super.key,
+    this.leading,
   });
 
   @override
@@ -21,6 +23,7 @@ class DashboardCustomAppBar extends StatelessWidget {
         scrolledUnderElevation: 0,
         centerTitle: true,
         titleSpacing: 0,
+        leading: leading,
         backgroundColor: Colors.transparent,
         flexibleSpace: FlexibleSpaceBar(
           background: Stack(

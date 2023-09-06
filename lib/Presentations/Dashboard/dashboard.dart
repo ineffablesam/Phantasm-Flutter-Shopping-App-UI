@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
@@ -14,7 +15,8 @@ import '../../Application/Models/products.dart';
 import 'Components/curve_appbar.dart';
 
 class Dashboard extends StatefulWidget {
-  const Dashboard({super.key});
+  final AdvancedDrawerController controller;
+  const Dashboard({super.key, required this.controller});
 
   @override
   State<Dashboard> createState() => _DashboardState();
@@ -62,13 +64,33 @@ class _DashboardState extends State<Dashboard> {
                     ],
                   ),
                 ),
-                const DashboardCustomAppBar(),
+                DashboardCustomAppBar(
+                  leading: IconButton(
+                    onPressed: _handleMenuButtonPressed,
+                    icon: ValueListenableBuilder<AdvancedDrawerValue>(
+                      valueListenable: widget.controller,
+                      builder: (_, value, __) {
+                        return AnimatedSwitcher(
+                          duration: Duration(milliseconds: 250),
+                          child: Icon(
+                            value.visible ? Icons.clear : Icons.menu,
+                            key: ValueKey<bool>(value.visible),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ),
               ],
             ),
           ],
         ),
       ),
     );
+  }
+
+  void _handleMenuButtonPressed() {
+    widget.controller.showDrawer();
   }
 }
 
