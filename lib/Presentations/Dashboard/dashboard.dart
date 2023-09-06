@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
@@ -12,6 +13,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../Application/Models/brand_data.dart';
 import '../../Application/Models/products.dart';
+import '../ProductsPage/products_page.dart';
 import 'Components/curve_appbar.dart';
 
 class Dashboard extends StatefulWidget {
@@ -131,7 +133,7 @@ class BuildFeaturedProducts extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: GridView.builder(
                   shrinkWrap: true,
-                  itemCount: productsData.length,
+                  itemCount: 4,
                   physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       childAspectRatio: 0.7,
@@ -439,11 +441,20 @@ class BuildCtaBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 12.h),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(10.r),
-        child: Image.asset(
-          "assets/images/cta_banner.png",
-          fit: BoxFit.cover,
+      child: CustomTap(
+        onTap: () {
+          Navigator.push(
+              context,
+              CupertinoPageRoute(
+                builder: (context) => const ProductPage(),
+              ));
+        },
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(10.r),
+          child: Image.asset(
+            "assets/images/cta_banner.png",
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );

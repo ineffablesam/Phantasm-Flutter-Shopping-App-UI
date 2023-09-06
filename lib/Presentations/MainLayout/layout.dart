@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -5,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:iconly/iconly.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:phantasm/Infrastructure/Utils/custom_tap.dart';
+import 'package:phantasm/Presentations/Admin/SalesPage/sales_page.dart';
 import 'package:phantasm/Presentations/CartPage/cart_page.dart';
 import 'package:phantasm/Presentations/CategoryPage/category_page.dart';
 import 'package:phantasm/Presentations/ProfilePage/profile_page.dart';
@@ -117,10 +119,11 @@ class _LayoutState extends State<Layout> {
                   icon: IconlyBold.home,
                   title: 'Dashboard',
                   onTap: () {
-                    setState(() {
-                      _selectedIndex = 0;
-                    });
-                    _advancedDrawerController.toggleDrawer();
+                    Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                          builder: (context) => const SalesPage(),
+                        ));
                   },
                 ),
                 BuildMenuTile(
