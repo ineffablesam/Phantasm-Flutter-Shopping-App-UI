@@ -17,11 +17,13 @@ class CustomPageAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      collapsedHeight: 10,
-      toolbarHeight: 1,
+      collapsedHeight: 100.h,
+      toolbarHeight: 100.h,
       automaticallyImplyLeading: false,
       pinned: true,
       expandedHeight: 100.h,
+      elevation: 0,
+      scrolledUnderElevation: 0,
       stretch: false,
       backgroundColor: Colors.transparent,
       flexibleSpace: FlexibleSpaceBar(

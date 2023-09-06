@@ -327,7 +327,7 @@ class _LayoutState extends State<Layout> {
         bottomNavigationBar: BottomAppBar(
           shape: const CircularNotchedRectangle(),
           color: _primaryColor,
-          height: 59.h,
+          height: 54.h,
           child: BottomNavigationBar(
             backgroundColor: Colors.transparent,
             elevation: 0,

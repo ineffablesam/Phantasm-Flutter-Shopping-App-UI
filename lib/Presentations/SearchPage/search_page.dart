@@ -14,6 +14,7 @@ class SearchPage extends StatelessWidget {
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
         body: CustomScrollView(
+          physics: const BouncingScrollPhysics(),
           slivers: [
             CustomPageAppBar(
               title: 'Search',

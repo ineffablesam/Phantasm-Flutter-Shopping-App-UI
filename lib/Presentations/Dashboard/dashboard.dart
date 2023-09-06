@@ -38,7 +38,7 @@ class _DashboardState extends State<Dashboard> {
                 SliverToBoxAdapter(
                   child: Column(
                     children: [
-                      130.verticalSpace,
+                      110.verticalSpace,
                       // Appbar content
                       const BuildAppBarContent(primaryColor: _primaryColor),
                       20.verticalSpace,

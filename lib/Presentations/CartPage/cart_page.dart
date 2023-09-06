@@ -20,6 +20,14 @@ class CartPage extends StatelessWidget {
             pinned: true,
             expandedHeight: 87,
             stretch: true,
+            title: Text(
+              'Cart',
+              style: GoogleFonts.poppins(
+                fontWeight: FontWeight.w800,
+                fontSize: 20.sp,
+                color: const Color(0xff31373E),
+              ),
+            ),
             actions: [
               IconButton(
                 onPressed: () {
@@ -31,24 +39,6 @@ class CartPage extends StatelessWidget {
                 ),
               ),
             ],
-            flexibleSpace: FlexibleSpaceBar(
-              stretchModes: [
-                StretchMode.zoomBackground,
-                StretchMode.blurBackground,
-                StretchMode.fadeTitle,
-              ],
-              background: Padding(
-                padding: const EdgeInsets.only(left: 20, top: 40),
-                child: Text(
-                  'Cart',
-                  style: GoogleFonts.poppins(
-                    fontWeight: FontWeight.w800,
-                    fontSize: 30,
-                    color: const Color(0xff31373E),
-                  ),
-                ),
-              ),
-            ),
           ),
           SliverToBoxAdapter(
             child: Column(

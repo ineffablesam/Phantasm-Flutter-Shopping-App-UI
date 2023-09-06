@@ -15,9 +15,9 @@ class DashboardCustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
         systemOverlayStyle: SystemUiOverlayStyle.dark,
-        expandedHeight: 110.h,
-        collapsedHeight: 110.h,
-        toolbarHeight: 110.h,
+        expandedHeight: 100.h,
+        collapsedHeight: 100.h,
+        toolbarHeight: 100.h,
         pinned: true,
         elevation: 0,
         scrolledUnderElevation: 0,
@@ -34,14 +34,14 @@ class DashboardCustomAppBar extends StatelessWidget {
                 height: 290.h,
               ),
               Positioned(
-                top: 50.h,
+                top: 45.h,
                 child: Image.asset(
                   'assets/images/brand_logo.png',
                   height: 20.h,
                 ),
               ),
               Positioned(
-                top: 45.h,
+                top: 40.h,
                 left: 10.w,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
