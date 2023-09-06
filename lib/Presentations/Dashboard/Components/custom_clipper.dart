@@ -81,11 +81,13 @@ class RPSCustomPainter extends CustomPainter {
     path_0.close();
 
     Paint paint_0_fill = Paint()..style = PaintingStyle.fill;
-    paint_0_fill.shader = ui.Gradient.linear(
-        Offset(size.width, size.height * 0.6114650),
-        Offset(size.width, size.height * -4.458605),
-        [Color(0xffDEF9F9).withOpacity(1), Color(0xffBCFFFF).withOpacity(1)],
-        [0, 1]);
+    paint_0_fill.shader = ui.Gradient.linear(Offset(0, 140), Offset(-4, 0), [
+      Color(0xffBEFFFF).withOpacity(1),
+      Color(0xffFEFEFE).withOpacity(1),
+    ], [
+      0,
+      1
+    ]);
     canvas.drawPath(path_0, paint_0_fill);
   }
 

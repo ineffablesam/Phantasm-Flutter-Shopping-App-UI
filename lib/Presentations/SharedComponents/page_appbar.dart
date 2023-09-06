@@ -31,6 +31,18 @@ class CustomPageAppBar extends StatelessWidget {
           alignment: Alignment.topCenter,
           children: [
             GradientClipper(height: 90.h),
+            Positioned(
+              top: -200.h,
+              left: 90.h,
+              child: Transform.rotate(
+                angle: -40,
+                child: Image.asset(
+                  'assets/images/pattern_right.png',
+                  width: 0.4.sw,
+                  opacity: AlwaysStoppedAnimation<double>(0.3),
+                ),
+              ),
+            ),
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
