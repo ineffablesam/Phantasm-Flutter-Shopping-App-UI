@@ -270,14 +270,14 @@ class _LayoutState extends State<Layout> {
                 width: 0.5.sw,
               ),
             ),
-            // Positioned(
-            //   bottom: 0,
-            //   left: 0,
-            //   child: Image.asset(
-            //     'assets/images/blue_smoke.png',
-            //     width: 1.sw,
-            //   ),
-            // ),
+            Positioned(
+              bottom: 0,
+              left: 0,
+              child: Image.asset(
+                'assets/images/blue_smoke.png',
+                width: 1.sw,
+              ),
+            ),
           ],
         ),
       ),
