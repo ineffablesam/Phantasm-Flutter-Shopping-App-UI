@@ -24,8 +24,7 @@ class Layout extends StatefulWidget {
 }
 
 class _LayoutState extends State<Layout> {
-  late AdvancedDrawerController
-      _advancedDrawerController; // Declare the variable
+  late AdvancedDrawerController _advancedDrawerController;
   int _selectedIndex = 0;
 
   final List<Widget Function(AdvancedDrawerController)> _pages = [
@@ -45,7 +44,7 @@ class _LayoutState extends State<Layout> {
 
   @override
   Widget build(BuildContext context) {
-    const _primaryColor = const Color(0xff0A3E89);
+    const primaryColor = Color(0xff0A3E89);
     return AdvancedDrawer(
       drawer: SideDrawer(
           content: Column(
@@ -326,7 +325,7 @@ class _LayoutState extends State<Layout> {
         body: _pages.elementAt(_selectedIndex)(_advancedDrawerController),
         bottomNavigationBar: BottomAppBar(
           shape: const CircularNotchedRectangle(),
-          color: _primaryColor,
+          color: primaryColor,
           height: 54.h,
           child: BottomNavigationBar(
             backgroundColor: Colors.transparent,

@@ -13,8 +13,7 @@ class _ProductOverviewState extends State<ProductOverview> {
 
   @override
   Widget build(BuildContext context) {
-    const _primaryColor = const Color(0xff0A3E89);
-
+    const primaryColor = Color(0xff0A3E89);
     return Scaffold(
       backgroundColor: const Color(0xffFAFAFA),
       bottomNavigationBar: Container(
@@ -22,34 +21,38 @@ class _ProductOverviewState extends State<ProductOverview> {
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisSize: MainAxisSize.max,
           children: [
             Expanded(
-              child: Container(
-                height: 50.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xffAB2525),
-                  borderRadius: BorderRadius.circular(30.r),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.shopping_bag_outlined,
-                      color: Colors.white,
-                      size: 20.sp,
-                    ),
-                    SizedBox(
-                      width: 10.w,
-                    ),
-                    Text(
-                      "Buy Now",
-                      style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14.sp,
+              child: CustomTap(
+                onTap: () {},
+                child: Container(
+                  height: 50.h,
+                  decoration: BoxDecoration(
+                    color: const Color(0xffAB2525),
+                    borderRadius: BorderRadius.circular(30.r),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.shopping_bag_outlined,
                         color: Colors.white,
+                        size: 20.sp,
                       ),
-                    ),
-                  ],
+                      SizedBox(
+                        width: 10.w,
+                      ),
+                      Text(
+                        "Buy Now",
+                        style: GoogleFonts.poppins(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14.sp,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -67,7 +70,7 @@ class _ProductOverviewState extends State<ProductOverview> {
             centerTitle: true,
             stretch: false,
             titleSpacing: 0,
-            backgroundColor: _primaryColor,
+            backgroundColor: primaryColor,
             automaticallyImplyLeading: true,
             title: Text(
               "Product".toUpperCase(),
@@ -181,7 +184,7 @@ class _ProductOverviewState extends State<ProductOverview> {
                                     child: CircleAvatar(
                                       radius: 3.r,
                                       backgroundColor: index == currentPage
-                                          ? _primaryColor
+                                          ? primaryColor
                                           : Colors.grey,
                                     ),
                                   );
@@ -261,7 +264,7 @@ class _ProductOverviewState extends State<ProductOverview> {
                               style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 20.sp,
-                                color: _primaryColor,
+                                color: primaryColor,
                               ),
                             ),
                             10.horizontalSpace,
@@ -312,7 +315,7 @@ class _ProductOverviewState extends State<ProductOverview> {
                           style: GoogleFonts.poppins(
                             fontWeight: FontWeight.w600,
                             fontSize: 16.sp,
-                            color: _primaryColor,
+                            color: primaryColor,
                           ),
                         ),
                       ],
