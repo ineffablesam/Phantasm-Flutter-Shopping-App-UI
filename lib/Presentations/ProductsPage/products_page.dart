@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,6 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../Application/Models/products.dart';
 import '../../Infrastructure/Utils/custom_tap.dart';
 import '../SharedComponents/gradient_clipper.dart';
+import 'OverviewPage/overview_page.dart';
 
 class ProductPage extends StatelessWidget {
   const ProductPage({super.key});
@@ -98,6 +100,13 @@ class ProductPage extends StatelessWidget {
                                   child: CustomTap(
                                     onTap: () {
                                       HapticFeedback.lightImpact();
+                                      Navigator.push(
+                                          context,
+                                          CupertinoPageRoute(
+                                              builder: (context) =>
+                                                  ProductOverview(
+                                                    products: productsData[i],
+                                                  )));
                                     },
                                     child: Container(
                                       decoration: BoxDecoration(
@@ -136,9 +145,13 @@ class ProductPage extends StatelessWidget {
                                                       MainAxisAlignment.center,
                                                   children: [
                                                     30.verticalSpace,
-                                                    Image.asset(
-                                                      productsData[i].image,
-                                                      fit: BoxFit.contain,
+                                                    Hero(
+                                                      tag:
+                                                          productsData[i].title,
+                                                      child: Image.asset(
+                                                        productsData[i].image,
+                                                        fit: BoxFit.contain,
+                                                      ),
                                                     ),
                                                   ],
                                                 ),

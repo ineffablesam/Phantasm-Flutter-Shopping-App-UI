@@ -18,7 +18,7 @@ final List<Products> productsData = [
     '20',
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget augue eget augue sodales fermentum. ',
     '1',
-    title: 'POSH Max',
+    title: 'POSH Max 1',
     image: 'assets/images/product_1.png',
   ),
   Products(
@@ -54,7 +54,7 @@ final List<Products> productsData = [
     '20',
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget augue eget augue sodales fermentum. ',
     '1',
-    title: 'POSH Max',
+    title: 'POSH Max 2',
     image: 'assets/images/product_1.png',
   ),
   Products(
@@ -63,7 +63,7 @@ final List<Products> productsData = [
     '20',
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget augue eget augue sodales fermentum. ',
     '2',
-    title: 'Funky Rep',
+    title: 'Funky Rep 1',
     image: 'assets/images/product_2.png',
   ),
   Products(
@@ -72,7 +72,7 @@ final List<Products> productsData = [
     '20',
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget augue eget augue sodales fermentum. ',
     '3',
-    title: 'Esco Bar',
+    title: 'Esco Bar 1',
     image: 'assets/images/product_3.png',
   ),
   Products(
@@ -81,7 +81,7 @@ final List<Products> productsData = [
     '20',
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget augue eget augue sodales fermentum. ',
     '4',
-    title: 'Lost Mary',
+    title: 'Lost Mary 1',
     image: 'assets/images/product_4.png',
   ),
 ];

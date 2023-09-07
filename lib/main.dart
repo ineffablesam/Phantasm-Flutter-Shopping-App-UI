@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           ),
           debugShowCheckedModeBanner: false,
           title: 'Phantasm',
-          home: Layout(),
+          home: const Layout(),
         );
       },
     );
